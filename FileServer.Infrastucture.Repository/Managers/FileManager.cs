@@ -23,10 +23,7 @@ namespace FileServer.Infrastucture.Repository.Managers
       {
         Created = false;
       }         
-      return Created;
-
-      throw new 
-        NotImplementedException("The method is not implemented yet");
+      return Created;          
     }
   }
 }

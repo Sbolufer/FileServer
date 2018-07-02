@@ -21,7 +21,7 @@ namespace FileServer.Infrastucture.Repository.Repositories
 
       try
       {
-        if (!FileManager.CreateFile(path));
+        FileManager.CreateFile(path);
 
         output = JsonConvert.SerializeObject(alumno);
 

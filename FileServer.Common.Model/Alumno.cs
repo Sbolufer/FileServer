@@ -25,33 +25,53 @@ namespace FileServer.Common.Model
       this.Dni        = Dni;
     }
 
-    // override object.Equals
     public override bool Equals(object obj)
     {
-      //       
-      // See the full list of guidelines at
-      //   http://go.microsoft.com/fwlink/?LinkID=85237  
-      // and also the guidance for operator== at
-      //   http://go.microsoft.com/fwlink/?LinkId=85238
-      //
-
-      if (obj == null || GetType() != obj.GetType())
-      {
-        return false;
-      }
-
-      // TODO: write your implementation of Equals() here
-      throw new NotImplementedException();
-      return base.Equals(obj);
+      var alumno = obj as Alumno;
+      return alumno != null &&
+             idAlumno == alumno.idAlumno &&
+             Nombre == alumno.Nombre &&
+             Apellidos == alumno.Apellidos &&
+             Dni == alumno.Dni;
     }
 
-    // override object.GetHashCode
     public override int GetHashCode()
     {
-      // TODO: write your implementation of GetHashCode() here
-      throw new NotImplementedException();
-      return base.GetHashCode();
+      var hashCode = -1833878610;
+      hashCode = hashCode * -1521134295 + idAlumno.GetHashCode();
+      hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Nombre);
+      hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Apellidos);
+      hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Dni);
+      return hashCode;
     }
+
+    // override object.Equals
+    //public override bool Equals(object obj)
+    //{
+    //  //       
+    //  // See the full list of guidelines at
+    //  //   http://go.microsoft.com/fwlink/?LinkID=85237  
+    //  // and also the guidance for operator== at
+    //  //   http://go.microsoft.com/fwlink/?LinkId=85238
+    //  //
+
+    //  if (obj == null || GetType() != obj.GetType())
+    //  {
+    //    return false;
+    //  }
+
+    //  // TODO: write your implementation of Equals() here
+    //  //throw new NotImplementedException();
+    //  return base.Equals(obj);
+    //}
+
+    //// override object.GetHashCode
+    //public override int GetHashCode()
+    //{
+    //  // TODO: write your implementation of GetHashCode() here
+    //  // throw new NotImplementedException();
+    //  return base.GetHashCode();
+    //}
 
     //public override bool Equals(object obj)
     //{
@@ -62,5 +82,8 @@ namespace FileServer.Common.Model
 
     //  return vRetorno;
     //}
+
+
+
   }
 }

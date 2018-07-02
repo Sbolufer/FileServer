@@ -33,7 +33,6 @@ namespace FileServer.Infrastucture.Repository.Repositories.Tests
       mockObject = mock.Object;
     }
 
-
     [TestMethod()]
     public void AddTest()
     {
