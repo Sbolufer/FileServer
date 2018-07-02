@@ -25,12 +25,23 @@ namespace FileServer.Presentation.WinSite
     // Versio Curs
     private void btn_Afegir_Click(object sender, EventArgs e)
     {
-      var alumno = new Alumno();     
+      var alumno = new Alumno();
+
+      alumno.idAlumno   = Convert.ToInt32(txtBox_CodiClient.Text);
+      alumno.Nombre     = txtBox_Nom.Text;
+      alumno.Apellidos  = txtBox_Cognoms.Text;
+      alumno.Dni        = txtBox_Dni.Text;
 
       iAlumnoRepositori.Add(alumno);
+
+      MessageBox.Show("Registro insertado!" + "Alumno: " + alumno.idAlumno);
     }
 
-
+    private void btn_Sortir_Click(object sender, EventArgs e)
+    {
+      this.Close();
+    }
+    
     // Versio Sbf
     //private void btn_Afegir_Click(object sender, EventArgs e)
     //{

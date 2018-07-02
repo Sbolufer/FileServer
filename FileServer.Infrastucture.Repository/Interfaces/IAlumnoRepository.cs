@@ -9,6 +9,7 @@ namespace FileServer.Infrastucture.Repository.Interfaces
 {
   public interface IAlumnoRepository
   {
+
     Alumno Add(Alumno alumno);
     
   }
